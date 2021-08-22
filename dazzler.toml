@@ -1,0 +1,228 @@
+# Dazzler configuration
+
+app_title = "Dazzler" # Name of the title of the index.
+host = "127.0.0.1" # Host address
+port = 8150 # Port of the server
+version = "0.1.0" # App version
+debug = false
+
+secret_key = "Please change me" # Secret key to use for signing sessions.
+
+[session]
+enable = false
+
+[requirements]
+# Prefer serving external requirements when available
+prefer_external = false
+
+# List of urls to include as script requirement.
+external_scripts = []
+
+# List of files to include as script requirement.
+internal_scripts = []
+
+# List of urls to include as style requirement.
+external_styles = []
+
+# List of files to include as script requirement.
+internal_styles = []
+
+# Remove the requirements directory before copying the new requirements.
+clean_directory = false
+
+[authentication]
+enable = false
+
+[electron]
+
+# List of page names to create a window from.
+windows = [
+    "main"
+]
+
+# Path to a file to use as electron-builder configuration.
+# build_config_file = # Uncomment to use
+
+# Save the window size in the app local directory as json.
+save_window_size = false
+
+# Path to the icon to use for the application. For windows .ico works
+# best when created with multiple resolutions. Otherwise a PNG 512x512.
+icon = ""
+
+# Package the application using asar, not recommended toset to false by
+# electron-builder but if you have trouble with packaging extra files
+# you can disable this.
+asar = true
+
+[electron.window_size]
+# Default window size to use when first creating the window.
+
+width = 800 # Default width of the window.
+height = 600 # Default height of the window.
+fullscreen = false
+
+[electron.loading_window]
+
+# Add a loading window while waiting for the server to be available.
+enabled = false
+
+# Path to an html file to use as loading window.
+html_file = ""
+title = "Loading"
+
+# Html to include on top of the default loading spinner
+header = ""
+footer = "<div>loading</div>"
+
+[electron.loading_window.options]
+width = 300 # Width of the loading window.
+height = 400 # Height of the loading window.
+
+# Custom title to use for the loading window.
+# title = # Uncomment to use
+fullscreen = false
+
+# Center the loading window in the middleof the screen.
+center = true
+resizable = false
+minimizable = false
+maximizable = false
+
+# Turn off to activate icon on the taskbar with the loading window.
+skip_taskbar = true
+
+# Create a frameless window if disabled, it has no toolbars.
+frame = false
+opacity = 1.0
+transparent = false
+
+# Options: default,hidden,hiddenInset,customButtonsOnHover
+title_bar_style = "default"
+click_through = true
+
+[electron.metadata]
+# Target package.json attributes and should be defined.
+
+# App name to use when packaging. No spaces.
+app_name = "AppName"
+
+# Description of the application to use when packaging.
+description = ""
+
+# Url for the project. (Required for NuGet or Linux Package URL)
+homepage = ""
+license = "" # Name of the license. (Linux only)
+
+[electron.metadata.author]
+name = ""
+email = ""
+
+[electron.builder]
+
+# The appId to use for the build,it is recommended to change.
+# app_id = # Uncomment to use
+
+# Executable name that can contains spaces. Defaults to
+# electron.metadata.name
+# product_name = # Uncomment to use
+copyright = "Copyright © year ${author}" # Copyright line to use in the installer.
+electron_version = "^13.1.7" # Electron version to use for the build.
+
+# Electron builder version to use for the build.
+electron_builder_version = "^22.11.7"
+
+[electron.target]
+# options_file = # Uncomment to use
+
+# List of architecture to target. Possible values: “x64” | “ia32” |
+# “armv7l” | “arm64”> | “x64” | “ia32” | “armv7l” | “arm64”
+# arch = # Uncomment to use
+
+# For multi platform targets like 7z and zip, specify the platform (os)
+# to configure. One of: "win", "linux", "mac"
+# platform = # Uncomment to use
+
+[electron.target.linux]
+# maintainer = # Uncomment to use
+# vendor = # Uncomment to use
+# synopsis = # Uncomment to use
+# category = # Uncomment to use
+# executable_name = # Uncomment to use
+# mime_types = # Uncomment to use
+
+[electron.target.win]
+# legal_trademarks = # Uncomment to use
+# signing_hash_algorithms = # Uncomment to use
+# certificate_file = # Uncomment to use
+# certificate_password = # Uncomment to use
+# certificate_subject_name = # Uncomment to use
+# certificate_sha1 = # Uncomment to use
+# additional_certificate_file = # Uncomment to use
+# publisher_name = # Uncomment to use
+# verify_update_code_signature = # Uncomment to use
+# requested_execution_level = # Uncomment to use
+
+[electron.target.mac]
+# entitlements = # Uncomment to use
+# entitlements_inherit = # Uncomment to use
+# provisioning_profile = # Uncomment to use
+# type = # Uncomment to use
+# binaries = # Uncomment to use
+# hardened_runtime = # Uncomment to use
+# gatekeeper_assess = # Uncomment to use
+
+[electron.publish]
+
+# One of: "generic", "bintray", "github", "s3", "spaces", "snap"
+provider = ""
+
+[electron.publish.generic]
+url = ""
+channel = "latest"
+# use_multiple_range_request = # Uncomment to use
+
+[electron.publish.bintray]
+package = ""
+repo = "generic"
+# owner = # Uncomment to use
+# component = # Uncomment to use
+# distribution = # Uncomment to use
+user = ""
+# token = # Uncomment to use
+
+[electron.publish.github]
+# repo = # Uncomment to use
+# owner = # Uncomment to use
+v_prefixed_tag_name = true
+host = "github.com"
+protocol = "https"
+# token = # Uncomment to use
+# private = # Uncomment to use
+release_type = "draft"
+
+[electron.publish.s3]
+# Help
+
+bucket = ""
+# region = # Uncomment to use
+# acl = # Uncomment to use
+# storage_class = # Uncomment to use
+# encryption = # Uncomment to use
+# endpoint = # Uncomment to use
+# channel = # Uncomment to use
+# path = # Uncomment to use
+
+[electron.publish.spaces]
+# Digital ocean, define DO_KEY_ID & DO_SECRET_KEY
+
+# name = # Uncomment to use
+# region = # Uncomment to use
+# channel = # Uncomment to use
+# path = # Uncomment to use
+# acl = # Uncomment to use
+
+[electron.publish.snap]
+channels = [
+    "edge"
+]
